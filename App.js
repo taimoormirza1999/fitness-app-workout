@@ -1,12 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import Navigation from "./Navigation";
+import { FitnessContext } from "./Context";
+import { themeColors } from "./theme";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={{flex:1,backgroundColor: themeColors.bgColor(0.9)}}>
+<StatusBar  barStyle="dark-content" />
+    <FitnessContext>
+      <Navigation />
+    </FitnessContext>
+    </SafeAreaView>
   );
 }
 
